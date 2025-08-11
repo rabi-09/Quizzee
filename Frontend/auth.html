@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzee | Authentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Logo Header -->
+            <div class="auth-header">
+                <span class="logo-text">Quizzee</span>
+                <p class="auth-subtitle">Master skills through interactive quizzes</p>
+            </div>
+
+            <!-- Login Form (Default Visible) -->
+            <form id="loginForm" class="auth-form active">
+                <h2 class="form-title">Sign In</h2>
+                
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input-container">
+                        <input type="password" id="loginPassword" required>
+                        <i class="fas fa-eye password-toggle" id="toggleLoginPassword"></i>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-accent">Login</button>
+                
+                <div class="auth-switch">
+                    Don't have an account? <a href="#" id="switchToRegister">Register</a>
+                </div>
+            </form>
+
+            <!-- Register Form (Hidden by Default) -->
+            <form id="registerForm" class="auth-form">
+                <h2 class="form-title">Create Account</h2>
+                
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerAddress">Address (Optional)</label>
+                    <input type="text" id="registerAddress">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="password-input-container">
+                        <input type="password" id="registerPassword" required>
+                        <i class="fas fa-eye password-toggle" id="toggleRegisterPassword"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <div class="password-input-container">
+                        <input type="password" id="registerConfirmPassword" required>
+                        <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-accent">Register</button>
+                
+                <div class="auth-switch">
+                    Already have an account? <a href="#" id="switchToLogin">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

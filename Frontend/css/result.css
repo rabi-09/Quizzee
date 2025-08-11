@@ -1,0 +1,322 @@
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-card: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-gold: #ffd700;
+    --accent-blue: #2e8bc0;
+    --accent-success: #3cb371;
+    --accent-danger: #e63946;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-wrapper {
+    width: 70%;
+    height: 90vh;
+    /* Reduced from 100vh to prevent touching screen edges */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.result-container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 800px;
+    padding: 1.5rem;
+    /* Reduced padding */
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.result-header {
+    margin-bottom: 1rem;
+    /* Reduced margin */
+}
+
+.result-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    /* Reduced font size */
+    margin-bottom: 0.5rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    /* Reduced font size */
+    margin-bottom: 0;
+}
+
+.score-display {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+    border-radius: 12px;
+    padding: 1rem;
+    /* Reduced padding */
+    margin: 1rem 0;
+    /* Reduced margin */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.score-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-blue), var(--accent-gold));
+}
+
+.emoji-container {
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+}
+
+.performance-text {
+    font-size: 1.2rem;
+    /* Reduced font size */
+    font-weight: 600;
+    margin: 0.5rem 0;
+    /* Reduced margin */
+    color: var(--text-primary);
+}
+
+.motivation-quote {
+    font-style: italic;
+    padding: 0.8rem;
+    /* Reduced padding */
+    border-left: 3px solid var(--accent-blue);
+    background-color: rgba(46, 139, 192, 0.1);
+    margin: 1rem 0;
+    /* Reduced margin */
+    text-align: center;
+    font-size: 0.9rem;
+    /* Reduced font size */
+}
+
+.high-score {
+    color: var(--accent-success);
+}
+
+.medium-score {
+    color: var(--accent-gold);
+}
+
+.low-score {
+    color: var(--accent-danger);
+}
+
+#score-text {
+    font-size: 1.2rem;
+    /* Reduced font size */
+    font-weight: 600;
+    margin: 0.5rem 0 0;
+    /* Reduced margin */
+    color: var(--text-primary);
+}
+
+.score-percentage {
+    font-size: 2.5rem;
+    /* Reduced font size */
+    font-weight: 700;
+    margin: 0.5rem 0;
+    /* Reduced margin */
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.action-buttons {
+    margin-top: 1rem;
+    /* Reduced margin */
+}
+
+.btn-home {
+    background-color: var(--accent-blue);
+    color: #000;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(46, 139, 192, 0.3);
+}
+
+.btn-home:hover {
+    background-color: #1f6f9e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 139, 192, 0.4);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce-emoji {
+    animation: bounce 1s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .result-wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .result-wrapper {
+        width: 85%;
+    }
+
+    .result-container {
+        padding: 1.2rem;
+    }
+
+    .result-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .score-percentage {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .result-wrapper {
+        width: 90%;
+        height: auto;
+        min-height: 90vh;
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .result-container {
+        padding: 1rem;
+        max-height: none;
+        margin: 15px 0;
+    }
+
+    .result-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .performance-text {
+        font-size: 1.1rem;
+    }
+
+    #score-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .result-wrapper {
+        width: 95%;
+        padding: 8px;
+    }
+
+    .result-container {
+        padding: 0.8rem;
+    }
+
+    .result-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .result-header p {
+        font-size: 0.9rem;
+    }
+
+    .score-percentage {
+        font-size: 2rem;
+    }
+
+    .performance-text {
+        font-size: 1rem;
+    }
+
+    #score-text {
+        font-size: 1rem;
+    }
+
+    .motivation-quote {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-home {
+        padding: 7px 16px;
+        font-size: 0.8rem;
+    }
+
+    .emoji-container img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 400px) {
+    .result-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .score-percentage {
+        font-size: 1.8rem;
+    }
+
+    .performance-text {
+        font-size: 0.95rem;
+    }
+}
